@@ -3,4 +3,6 @@ alias untarball="tar xzfv"
 alias tarball="tar cvzf"
 
 # just run a command and ignore all of its output.
-justopen(){ $1 >& /dev/null & }
+just-open(){ $1 >& /dev/null & }
+
+just-gnome-open(){ exec gnome-open $1 >& /dev/null & }
