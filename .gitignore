@@ -1,5 +1,7 @@
+# ignore everything
 *
 
+# but these files
 !.bashrc
 !.profile
 !.gitignore
