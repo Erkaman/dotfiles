@@ -5,3 +5,6 @@
 !.bashrc
 !.profile
 !.gitignore
+
+# aspell dictionary files.
+!.aspell*
