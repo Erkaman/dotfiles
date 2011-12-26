@@ -4,7 +4,7 @@ alias tarball="tar cvzf"
 alias o=exo-open
 
 # just run a command and ignore all of its output.
-just-open(){ $1 >& /dev/null & }
+j-open(){ nohup $1 >/dev/null 2>&1&}
 
 just-wmg-open(){ exec o $1 >& /dev/null & }
 

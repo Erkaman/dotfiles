@@ -7,4 +7,7 @@
 !.gitignore
 
 # aspell dictionary files.
-!.aspell*
+!.aspell.en.prepl
+!.aspell.en.pws
+!.aspell.sv.prepl
+!.aspell.sv.pws
