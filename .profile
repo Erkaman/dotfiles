@@ -21,4 +21,6 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-PATH=/usr/bin/scripts:/usr/local/texlive/2011/bin/x86_64-linux:/usr/local/xulrunner:$PATH; export PATH
+PATH=/usr/bin/scripts:/usr/local/texlive/2011/bin/x86_64-linux:/usr/local/xulrunner:/usr/local/lib:$PATH; export PATH
+
+LD_LIBRARY_PATH=/usr/local/lib; export LD_LIBRARY_PATH

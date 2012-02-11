@@ -1,4 +1,4 @@
-personal_ws-1.1 en 29 
+personal_ws-1.1 en 31 
 Aref
 pseudocode
 Arnebäck
@@ -10,6 +10,7 @@ TGA
 checksum
 CRC
 lossless
+STMP
 fullscreen
 GIF
 bitwise
@@ -22,6 +23,7 @@ lossily
 Helmotz
 RLE
 PackBits
+scanline
 trichromacy
 Imagemagick
 losslessly
