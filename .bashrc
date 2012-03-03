@@ -14,7 +14,7 @@ just-wmg-open(){ exec o $1 >& /dev/null & }
 # makes bash match filesnames in a case insensitive manner.
 shopt -s nocaseglob
 
-PATH="$HOME/bin:~/.cabal/bin/:$PATH"
+PATH="$HOME/bin:~/.cabal/bin/:~/.local/bin:$PATH"
 
 # eternal bash history.
 # source: http://blog.tonyscelfo.com/2009/04/save-all-of-your-bash-history.html
@@ -74,3 +74,5 @@ log_bash_eternal_history()
 }
 
 PROMPT_COMMAND="log_bash_eternal_history"
+
+TEXMFLOCAL="/usr/local/texlive/2011/texmf/"
