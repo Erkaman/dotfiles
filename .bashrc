@@ -4,6 +4,15 @@ alias tarball="tar cvzf"
 alias o=exo-open
 alias dark="ark --batch"
 
+function h2d { echo "obase=10; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
+function h2b { echo "obase=2; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
+function b2d { echo "obase=10; ibase=2; "$*"" | bc; }
+function b2h { echo "0x$(echo "obase=16; ibase=2;"$*"" | bc)"; }
+function d2b { echo "obase=2; ibase=10; "$*"" | bc; }
+function d2h { echo "0x$(echo "obase=16; ibase=10; "$*"" | bc)"; }
+
+alias trash="trash-put"
+
 # just run a command and ignore all of its output.
 j-open(){ nohup $1 >/dev/null 2>&1&}
 
@@ -14,7 +23,7 @@ just-wmg-open(){ exec o $1 >& /dev/null & }
 # makes bash match filesnames in a case insensitive manner.
 shopt -s nocaseglob
 
-PATH="$HOME/bin:~/.cabal/bin/:~/.local/bin:$PATH"
+PATH="$HOME/bin:~/.cabal/bin/:~/.local/bin:/usr/local/bin:$PATH"
 
 # eternal bash history.
 # source: http://blog.tonyscelfo.com/2009/04/save-all-of-your-bash-history.html
