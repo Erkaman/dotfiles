@@ -4,6 +4,9 @@ alias tarball="tar cvzf"
 alias o=exo-open
 alias dark="ark --batch"
 
+NC=`cat /proc/cpuinfo | grep processor | wc -l`
+alias make="make -j$NC"
+
 function h2d { echo "obase=10; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
 function h2b { echo "obase=2; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
 function b2d { echo "obase=10; ibase=2; "$*"" | bc; }
