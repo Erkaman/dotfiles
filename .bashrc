@@ -4,6 +4,8 @@ alias tarball="tar cvzf"
 alias o=exo-open
 alias dark="ark --batch"
 
+export ACLOCAL_FLAGS="-I /usr/local/share/aclocal"
+
 NC=`cat /proc/cpuinfo | grep processor | wc -l`
 alias make="make -j$NC"
 
