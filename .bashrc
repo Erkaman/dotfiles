@@ -1,7 +1,6 @@
 # aliasaes for making and decompressing tarballs.
 alias untarball="tar xzfv"
 alias tarball="tar cvzf"
-alias o=exo-open
 alias dark="ark --batch"
 
 export ACLOCAL_FLAGS="-I /usr/local/share/aclocal"
@@ -14,7 +13,7 @@ alias unmounttrans="sudo umount /media/trans"
 alias mountcd="sudo mount -t auto /dev/cdrom /mnt/cdrom"
 alias unmountcd="sudo umount /mnt/cdrom"
 
-
+# Run make multicore if possible to speed up compilations.
 NC=`cat /proc/cpuinfo | grep processor | wc -l`
 alias make="make -j$NC"
 
@@ -29,10 +28,6 @@ alias trash="trash-put"
 
 # just run a command and ignore all of its output.
 j-open(){ nohup $1 >/dev/null 2>&1&}
-
-just-wmg-open(){ exec o $1 >& /dev/null & }
-
-#play-all-files(){ exec "just-open "gnome-mplayer *.mp3"" }
 
 # makes bash match filesnames in a case insensitive manner.
 shopt -s nocaseglob
@@ -98,4 +93,3 @@ log_bash_eternal_history()
 
 PROMPT_COMMAND="log_bash_eternal_history"
 
-TEXMFLOCAL="/usr/local/texlive/2011/texmf/"
