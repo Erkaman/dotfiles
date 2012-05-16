@@ -22,8 +22,6 @@ alias unmounttrans="sudo umount /media/trans"
 alias mountcd="sudo mount -t auto /dev/cdrom /mnt/cdrom"
 alias unmountcd="sudo umount /mnt/cdrom"
 
-
-
 # Run make multicore if possible to speed up compilations.
 if [[ $platform == 'linux' ]]; then
 NC=$(cat /proc/cpuinfo | grep processor | wc -l)
@@ -53,7 +51,7 @@ shopt -s nocaseglob
 export PATH="~/bin/:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:/usr/local/texlive/2011/bin/universal-darwin/:$PATH"
 
 # custom prompt.
-export PS1="\u@\w$ "
+export PS1="\w > "
 
 # For updating "locate" on OS X
 alias uplocate="sudo /usr/libexec/locate.updatedb"
