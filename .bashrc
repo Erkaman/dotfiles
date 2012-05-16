@@ -32,7 +32,7 @@ j-open(){ nohup $1 >/dev/null 2>&1&}
 # makes bash match filesnames in a case insensitive manner.
 shopt -s nocaseglob
 
-PATH="$HOME/bin:~/.cabal/bin/:~/.local/bin:/usr/local/bin:$PATH"
+export PATH="~/bin/:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:$PATH"
 
 # eternal bash history.
 # source: http://blog.tonyscelfo.com/2009/04/save-all-of-your-bash-history.html
