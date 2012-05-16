@@ -14,8 +14,11 @@ alias mountcd="sudo mount -t auto /dev/cdrom /mnt/cdrom"
 alias unmountcd="sudo umount /mnt/cdrom"
 
 # Run make multicore if possible to speed up compilations.
+# will keep it this way till I figure out how to make this work on my MacBook.
+if [[ $OSTYPE == 'linux-gnu' ]]; then
 NC=`cat /proc/cpuinfo | grep processor | wc -l`
 alias make="make -j$NC"
+fi
 
 function h2d { echo "obase=10; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
 function h2b { echo "obase=2; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
