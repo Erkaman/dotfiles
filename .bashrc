@@ -1,3 +1,12 @@
+platform='unknown'
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   platform='mac'
+fi
+
+
 # aliasaes for making and decompressing tarballs.
 alias untarball="tar xzfv"
 alias tarball="tar cvzf"
@@ -13,12 +22,18 @@ alias unmounttrans="sudo umount /media/trans"
 alias mountcd="sudo mount -t auto /dev/cdrom /mnt/cdrom"
 alias unmountcd="sudo umount /mnt/cdrom"
 
+
+
 # Run make multicore if possible to speed up compilations.
-# will keep it this way till I figure out how to make this work on my MacBook.
-if [[ $OSTYPE == 'linux-gnu' ]]; then
-NC=`cat /proc/cpuinfo | grep processor | wc -l`
-alias make="make -j$NC"
+if [[ $platform == 'linux' ]]; then
+NC=$(cat /proc/cpuinfo | grep processor | wc -l)
+elif [[ $platform == 'mac' ]]; then
+system_profiler SPHardwareDataType >  ~/.temp
+NC=$(grep "Total Number of Cores:" ~/.temp | awk '{print $5}' -)
+rm ~/.temp
 fi
+
+alias make="make -j$NC"
 
 function h2d { echo "obase=10; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
 function h2b { echo "obase=2; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
