@@ -14,6 +14,8 @@ alias dark="ark --batch"
 
 export ACLOCAL_FLAGS="-I /usr/local/share/aclocal"
 
+export LESS=-i
+
 # Aliases to mount my USB drive named Transcend.
 alias mounttrans="sudo mount -t vfat /dev/sdb1 /media/trans -o uid=1000,gid=1000,utf8,dmask=027,fmask=137"
 alias unmounttrans="sudo umount /media/trans"
