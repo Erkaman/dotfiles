@@ -14,6 +14,8 @@ alias dark="ark --batch"
 
 export ACLOCAL_FLAGS="-I /usr/local/share/aclocal"
 
+export CPLUS_INCLUDE_PATH="/usr/local/include/logog"
+
 export LESS=-i
 
 alias plistprint="PlistBuddy -c Print"
@@ -52,14 +54,7 @@ j-open(){ nohup $1 >/dev/null 2>&1&}
 # makes bash match filesnames in a case insensitive manner.
 shopt -s nocaseglob
 
-
-
-if [[ $platform == 'linux' ]]; then
-export PATH="~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:$PATH"
-elif [[ $platform == 'mac' ]]; then
-export PATH="/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/universal-darwin:/usr/libexec:$PATH"
-export MANPATH=/opt/local/share/man:$MANPATH
-fi
+export PATH="~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:/usr/local/texlive/2011/bin/universal-darwin:/usr/libexec::$PATH"
 
 # custom prompt.
 export PS1="\w > "
@@ -126,4 +121,3 @@ log_bash_eternal_history()
 }
 
 PROMPT_COMMAND="log_bash_eternal_history"
-
