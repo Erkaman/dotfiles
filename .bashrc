@@ -54,7 +54,12 @@ j-open(){ nohup $1 >/dev/null 2>&1&}
 # makes bash match filesnames in a case insensitive manner.
 shopt -s nocaseglob
 
-export PATH="~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:/usr/local/texlive/2011/bin/universal-darwin:/usr/libexec::$PATH"
+if [[ $platform == 'linux' ]]; then
+export PATH="~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:$PATH"
+elif [[ $platform == 'mac' ]]; then
+export PATH="/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/universal-darwin:/usr/libexec:$PATH"
+export MANPATH=/opt/local/share/man:$MANPATH
+fi
 
 # custom prompt.
 export PS1="\w > "
