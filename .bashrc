@@ -39,8 +39,8 @@ fi
 
 alias make="make -j$NC"
 
-function h2d { echo "obase=10; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
-function h2b { echo "obase=2; ibase=16; $( echo "$*" | sed -e 's/0x//g' -e 's/\([a-z]\)/\u\1/g' )" | bc; }
+function h2d { echo "obase=10; ibase=16; $( echo "$*" | tr '[:lower:]' '[:upper:]' | sed -e 's/0X//g' )" | bc; }
+function h2b { echo "obase=2; ibase=16; $( echo "$*" | tr '[:lower:]' '[:upper:]' | sed -e 's/0X//g'  )" | bc; }
 function b2d { echo "obase=10; ibase=2; "$*"" | bc; }
 function b2h { echo "0x$(echo "obase=16; ibase=2;"$*"" | bc)"; }
 function d2b { echo "obase=2; ibase=10; "$*"" | bc; }
