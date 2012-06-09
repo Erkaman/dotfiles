@@ -2,6 +2,8 @@ platform='unknown'
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
    platform='linux'
+elif [[ "$unamestr" == 'MINGW32_NT-6.1' ]]; then
+   platform='windows'
 elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='mac'
 fi
@@ -49,7 +51,8 @@ function d2h { echo "0x$(echo "obase=16; ibase=10; "$*"" | bc)"; }
 alias trash="trash-put"
 
 # just run a command and ignore all of its output.
-function j-open(){ nohup $1 >/dev/null 2>&1&}
+
+function jopen(){ nohup $1 >/dev/null 2>&1&}
 
 # makes bash match filesnames in a case insensitive manner.
 shopt -s nocaseglob
