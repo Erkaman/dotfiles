@@ -131,3 +131,5 @@ log_bash_eternal_history()
 PROMPT_COMMAND="log_bash_eternal_history"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export BC_ENV_ARGS=~/.bc
