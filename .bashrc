@@ -39,7 +39,7 @@ fi
 
 alias make="make -j$NC"
 
-function h2d { echo "obase=10; ibase=16; $( echo "$*" | tr '[:lower:]' '[:upper:]' | sed -e 's/0X//g' )" | bc; }
+function h2d() { echo "obase=10; ibase=16; $( echo "$@" | tr '[:lower:]' '[:upper:]' | sed -e 's/0X//g' )" | bc; }
 function h2b { echo "obase=2; ibase=16; $( echo "$*" | tr '[:lower:]' '[:upper:]' | sed -e 's/0X//g'  )" | bc; }
 function b2d { echo "obase=10; ibase=2; "$*"" | bc; }
 function b2h { echo "0x$(echo "obase=16; ibase=2;"$*"" | bc)"; }
@@ -49,7 +49,7 @@ function d2h { echo "0x$(echo "obase=16; ibase=10; "$*"" | bc)"; }
 alias trash="trash-put"
 
 # just run a command and ignore all of its output.
-j-open(){ nohup $1 >/dev/null 2>&1&}
+function j-open(){ nohup $1 >/dev/null 2>&1&}
 
 # makes bash match filesnames in a case insensitive manner.
 shopt -s nocaseglob
@@ -126,3 +126,5 @@ log_bash_eternal_history()
 }
 
 PROMPT_COMMAND="log_bash_eternal_history"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
