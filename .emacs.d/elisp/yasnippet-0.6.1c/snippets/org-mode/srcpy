@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: srcpy
+#name : Python Source Code Block
+#contributor : Martyn Jago <martyn.jago@btinternet.com>
+# --
+#+BEGIN_SRC python
+$0$>
+#+END_SRC$>

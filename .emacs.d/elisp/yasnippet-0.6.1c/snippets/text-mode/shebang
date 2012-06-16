@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: shebang template
+# key: shebang
+# --
+#!/bin/$1
+$0

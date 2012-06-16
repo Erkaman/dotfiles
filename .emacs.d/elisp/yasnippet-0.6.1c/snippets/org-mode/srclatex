@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: srclatex
+#name : LaTeX Source Code Block
+#contributor : Eric Arneback <erkastina@hotmail.com>
+# --
+#+BEGIN_SRC latex
+$0$>
+#+END_SRC$>

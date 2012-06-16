@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Function template without vars.
+# key: funci
+# contributor : Eric Arneback <erkastina@hotmail.com>
+
+# --
+function $1 : $2;
+var
+i : integer;
+begin
+$0
+end;
+
+

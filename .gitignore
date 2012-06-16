@@ -1,16 +1,59 @@
-# ignore everything
-*
+.anthy/
+.cache/
+.config/
+.conkeror.mozdev.org/
+.dbus/
+.dropbox/
+.dropbox-dist
+.fontconfig/
+.fonts/
+.gconf/
+.gem/
+.gnome2/
+.gnupg/
+.gstreamer-0.10/
+.kde/
+.local
+.mission-control/
+.mozilla/
+.mplayer/
+.nv/
+.pulse/
+.rpmdb/
+.rvm/
+.slocdata/
+.ssh/
+.subversion/
+.thumbnails/
+.thunderbird/
+.wine/
+.xine/
+.xinput.d/
+Downloads/
+Dropbox/
+Music/
+backdropbox/
 
-# but these files
-!.bashrc
-!.profile
-!.gitignore
 
-# aspell dictionary files.
-!.aspell.en.prepl
-!.aspell.en.pws
-!.aspell.sv.prepl
-!.aspell.sv.pws
+.bash_*
+.ICEauthority
+.lesshst
+.pulse-cookie
+.Xauthority
+.ido.last
+.recentf
+.zlogin
+.zshrc
+.dmrc
+.xsession-errors
 
-# bc default settings
-!.bc
+.conkerorrc/bookmarks.js
+
+bin/youtube-dl
+bin/sumatrapdfcache/
+bin/sumatrapdfprefs.dat
+bin/SumatraPDF.exe
+
+.emacs.d/auto-save-list
+.emacs.d/smex.save
+*.elc

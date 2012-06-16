@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: shebang
+#name : Bash Shebang
+#contributor : Eric Arnebäck <erkastina@hotmail.com>
+# --
+#!/usr/bin/env bash
+$0

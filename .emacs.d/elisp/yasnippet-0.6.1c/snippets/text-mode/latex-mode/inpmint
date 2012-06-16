@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: input minted source file
+# key: inpmint
+# --
+\inputminted[frame=single]{$1}{$0}

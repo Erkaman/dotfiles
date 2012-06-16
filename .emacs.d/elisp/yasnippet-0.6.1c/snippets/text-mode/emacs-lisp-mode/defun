@@ -1,0 +1,10 @@
+#name : function template
+#contributor : Xah Lee
+# --
+(defun $1 ()
+  ""
+  (interactive)
+  (let ((var1 some))
+    $0
+  )
+)

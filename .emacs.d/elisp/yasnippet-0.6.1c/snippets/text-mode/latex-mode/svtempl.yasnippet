@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: Template for texts written in Swedish.
+# key: svtempl
+# --
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
+\RequirePackage[sc]{mathpazo}
+\RequirePackage{tgpagella}
+\usepackage[kerning,spacing]{microtype}
+\title{$1}
+\author{${2:`user-full-name`}}
+
+\begin{document}
+
+\maketitle
+
+$0
+
+\end{document}
+

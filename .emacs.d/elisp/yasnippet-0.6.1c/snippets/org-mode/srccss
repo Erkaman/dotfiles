@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: srccss
+#name : CSS Source Code Block
+#contributor : Eric Arneback <erkastina@hotmail.com>
+# --
+#+BEGIN_SRC css
+$0$>
+#+END_SRC$>

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: srchtml
+#name : HTML Source Code Block
+#contributor : Eric Arneback <erkastina@hotmail.com>
+# --
+#+BEGIN_SRC html
+$0$>
+#+END_SRC$>

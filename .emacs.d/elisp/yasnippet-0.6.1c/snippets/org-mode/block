@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: block
+# name : #+begin_...#+end_
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+#+BEGIN_${1:$$(upcase yas/text)} $2
+  $0
+#+END_${1:$(upcase text)}
