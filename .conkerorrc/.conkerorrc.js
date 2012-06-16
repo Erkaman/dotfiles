@@ -4,8 +4,6 @@ homepage = "http://www.google.com/ncr";
 
 require("new-tabs.js");
 
-
-
 require("favicon");
 add_hook("mode_line_hook", mode_line_adder(buffer_icon_widget), true);
 read_buffer_show_icons = true;
@@ -41,8 +39,10 @@ define_webjump("glos", "http://www.glosboken.se/");
 define_webjump("blog", "http://whatericlearnedtoday.blogspot.com/");
 define_webjump("conk","http://conkeror.org/");
 define_webjump("u","http://youtube.com");
-
 define_webjump("c++","http://en.cppreference.com/w/Main_Page");
+
+define_webjump("jisho","http://jisho.org/words?jap=%s");
+define_webjump("yb","http://www.yellowbridge.com/chinese/character-etymology.php?searchChinese=1&zi=%s");
 
 // load download buffers in the background in the current
 // window, instead of in new windows.
