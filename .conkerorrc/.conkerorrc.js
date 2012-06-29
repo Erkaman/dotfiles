@@ -43,6 +43,7 @@ define_webjump("c++","http://en.cppreference.com/w/Main_Page");
 
 define_webjump("jisho","http://jisho.org/words?jap=%s");
 define_webjump("yb","http://www.yellowbridge.com/chinese/character-etymology.php?searchChinese=1&zi=%s");
+define_webjump("kd","http://kanjidamage.com/kanji/search?utf8=%E2%9C%93&q=%s");
 
 // load download buffers in the background in the current
 // window, instead of in new windows.
