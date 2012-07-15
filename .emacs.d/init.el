@@ -8,6 +8,11 @@
 (defun is-windows ()
   (eq system-type 'windows-nt))
 
+(defun is-linux ()
+  (eq system-type 'gnu/linux))
+
+
+
 (require 'cl)
 
                                         ; make copying text from application to application work on linux.
@@ -1037,3 +1042,14 @@ If no associated application, then `find-file' FILE."
 ;; round "grey85" :inverse-video nil :box nil :strike-through nil :overline nil :un
 ;; derline nil :slant normal :weight normal :height 83 :width normal :foundry "outl
 ;; ine" :family "Monaco"))))
+
+(when (is-linux)
+  (require 'ibus)
+  (add-hook 'after-init-hook 'ibus-mode-on)
+  (ibus-define-common-key ?\C-j t)
+  (setq ibus-agent-file-name "~/.emacs.d/elisp/ibus-el-agent")
+  (ibus-define-common-key ?\C-\s nil)
+  (ibus-define-common-key ?\C-/ nil))
+
+
+
