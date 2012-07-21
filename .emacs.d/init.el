@@ -1051,5 +1051,6 @@ If no associated application, then `find-file' FILE."
   (ibus-define-common-key ?\C-\s nil)
   (ibus-define-common-key ?\C-/ nil))
 
-
-
+(set-fontset-font "fontset-default"
+                  'japanese-jisx0208
+                  '("Osaka" . "iso10646-1"))
