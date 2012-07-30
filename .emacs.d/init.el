@@ -652,13 +652,22 @@ If no associated application, then `find-file' FILE."
 
 (defun browse-file-linux (file)
   (dired-do-shell-command "gnome-open" nil
+                          (dired-get-marked-files t
+  current-prefix-arg)))
+
+
+(defun browse-file-osx (file)
+  (dired-do-shell-command "open" nil
                           (dired-get-marked-files t current-prefix-arg)))
 
 (defun browse-file (file)
-  (cond ((equal system-type 'gnu/linux)
+  (cond ((is-linux)
          (browse-file-linux file))
         ((is-windows)
-         (browse-file-windows file))))
+         (browse-file-windows file))
+        ((is-osx)
+         (browse-file-osx file))
+	))
 
 (eval-after-load "dired"
   '(define-key dired-mode-map [f3]
