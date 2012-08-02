@@ -24,11 +24,15 @@ alias plistprint="PlistBuddy -c Print"
 
 # Aliases to mount my USB drive named Transcend.
 alias mounttrans="sudo mount -t vfat /dev/sdb1 /media/trans -o uid=1000,gid=1000,utf8,dmask=027,fmask=137"
-alias unmounttrans="sudo umount /media/trans"
+alias umounttrans="sudo umount /media/trans"
 
 # aliases for mounting CD-ROM
 alias mountcd="sudo mount -t auto /dev/cdrom /mnt/cdrom"
-alias unmountcd="sudo umount /mnt/cdrom"
+alias umountcd="sudo umount /mnt/cdrom"
+
+# aliases for unmounting my external hard drive.
+alias umountext="sudo umount /dev/sdb1/"
+alias mountext="sudo mount /dev/sdb1/ /media/seagate/"
 
 # Run make multicore if possible to speed up compilations.
 if [[ $platform == 'linux' ]]; then
