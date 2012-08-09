@@ -62,7 +62,7 @@ function jopen(){ nohup $1 >/dev/null 2>&1&}
 shopt -s nocaseglob
 
 if [[ $platform == 'linux' ]]; then
-export PATH="~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:$PATH"
+export PATH="~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:/opt/jruby/bin:$PATH"
 elif [[ $platform == 'mac' ]]; then
 export PATH="/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/universal-darwin:/usr/libexec:$PATH"
 export MANPATH=/opt/local/share/man:$MANPATH

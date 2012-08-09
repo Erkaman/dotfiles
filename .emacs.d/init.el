@@ -430,6 +430,7 @@
 (add-hook 'sh-mode-hook 'flyspell-prog-mode)
 (add-hook 'makefile-mode-hook 'flyspell-prog-mode)
 (add-hook 'lua-mode-hook 'flyspell-prog-mode)
+(add-hook 'ruby-mode-hook 'flyspell-prog-mode)
 
 (defun turn-on-flyspell ()
   "Force flyspell-mode on using a positive arg. For use in hooks."
@@ -1063,3 +1064,5 @@ If no associated application, then `find-file' FILE."
 (set-fontset-font "fontset-default"
                   'japanese-jisx0208
                   '("Osaka" . "iso10646-1"))
+
+(add-to-list 'auto-mode-alist '("buildfile" . ruby-mode))
