@@ -47,6 +47,8 @@ define_webjump("kd","http://kanjidamage.com/kanji/search?utf8=%E2%9C%93&q=%s");
 
 define_webjump("taekim","http://www.google.com/search?q=site%3Ahttp%3A%2F%2Fwww.guidetojapanese.org%2Flearn%2Fgrammar+&hl=en&gbv=2&gs_l=heirloom-hp.3...195.5459.0.5585.18.15.1.0.0.0.130.1354.5j10.15.0...0.0...1c.p7m6Y17EiKw&oq=site%3Ahttp%3A%2F%2Fwww.guidetojapanese.org%2Flearn%2Fgrammar+");
 
+define_webjump("jsfx","http://thejadednetwork.com/sfx/search/?keyword=%s&submitSearch=Search+SFX&x=");
+
 
 // load download buffers in the background in the current
 // window, instead of in new windows.
