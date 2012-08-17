@@ -629,8 +629,9 @@
 
 (defun gtd ()
   (interactive)
-  (find-file "~/Dropbox/org/tasks.org")
-  )
+  (if (is-linux)
+      (find-file "/home/Dropbox/org/tasks.org")
+    (find-file "~/Dropbox/org/tasks.org")))
 
 
 (global-set-key (kbd "C-c b") 'browse-url-at-point)
