@@ -50,6 +50,11 @@ define_webjump("taekim","http://www.google.com/search?q=site%3Ahttp%3A%2F%2Fwww.
 define_webjump("jsfx","http://thejadednetwork.com/sfx/search/?keyword=%s&submitSearch=Search+SFX&x=");
 
 
+define_webjump("jverb","http://www.japaneseverbconjugator.com/");
+define_webjump("jpart","http://nihongoichiban.com/home/japanese-grammar-particles/");
+
+
+
 // load download buffers in the background in the current
 // window, instead of in new windows.
 download_buffer_automatic_open_target = OPEN_NEW_BUFFER_BACKGROUND;
