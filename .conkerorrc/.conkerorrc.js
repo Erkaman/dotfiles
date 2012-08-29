@@ -53,6 +53,7 @@ define_webjump("jsfx","http://thejadednetwork.com/sfx/search/?keyword=%s&submitS
 define_webjump("jverb","http://www.japaneseverbconjugator.com/");
 define_webjump("jpart","http://nihongoichiban.com/home/japanese-grammar-particles/");
 
+define_webjump("sport","https://student.portal.chalmers.se/sv/Sidor/default.aspx");
 
 
 // load download buffers in the background in the current
