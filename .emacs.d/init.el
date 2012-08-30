@@ -902,6 +902,30 @@ If no associated application, then `find-file' FILE."
     (if window-system (set-exec-path-from-shell-PATH)))
 
 (add-to-list 'auto-mode-alist '("\\.m$" . objc-mode))
+(add-to-list 'auto-mode-alist '("\\.mm$" . objc-mode))
+
+(defun bh-choose-header-mode ()
+  (interactive)
+  (if (string-equal (substring (buffer-file-name) -2) ".h")
+      (progn
+        ;; OK, we got a .h file, if a .m file exists we'll assume it's
+        ; an objective c file. Otherwise, we'll look for a .cpp file.
+        (let ((dot-m-file (concat (substring (buffer-file-name) 0 -1) "m"))
+              (dot-cpp-file (concat (substring (buffer-file-name) 0 -1) "cpp")))
+          (if (file-exists-p dot-m-file)
+              (progn
+                (objc-mode)
+                )
+            (if (file-exists-p dot-cpp-file)
+                (c++-mode)
+              )
+            )
+          )
+        )
+    )
+  )
+
+(add-hook 'find-file-hook 'bh-choose-header-mode)
 
 ;; Also see:
 ;; http://groups.google.com/group/gnu.emacs.help/browse_thread/thread/31edd5b417119d72
