@@ -1096,15 +1096,6 @@ If no associated application, then `find-file' FILE."
 ; set to this if insufficent (setq compilation-scroll-output 'first-error)
 (setq compilation-scroll-output 1) ;; automatically scroll the compilation windo
 
-(setq compilation-window-height 10) ;; Set the compilation window height...
-(setq compilation-finish-function ;; Auto-dismiss compilation buffer...
-      (lambda (buf str)
-        (if (string-match "exited abnormally" str)
-            (message "compilation errors, press F6 to visit")
-          ; no errors, make the compilation window go away after 2.5 sec
-          (run-at-time 2.5 nil 'delete-windows-on buf)
-          (message "No compilation errors!"))))
-
 (defun* get-closest-pathname (&optional (file "makefile"))
   "This function walks up the current path until it finds Makefile and then returns the path to it."
   (let ((root (expand-file-name "/")))
@@ -1122,3 +1113,4 @@ If no associated application, then `find-file' FILE."
   (compile (format "make -C %s" (file-name-directory (get-closest-pathname)))))
 
 (global-set-key "\C-xc" 'my-compile-func)
+
