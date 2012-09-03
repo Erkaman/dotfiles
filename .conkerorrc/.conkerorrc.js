@@ -55,6 +55,8 @@ define_webjump("jpart","http://nihongoichiban.com/home/japanese-grammar-particle
 
 define_webjump("sport","https://student.portal.chalmers.se/sv/Sidor/default.aspx");
 
+define_webjump("tda545","http://www.cse.chalmers.se/edu/course/tda545/");
+
 
 // load download buffers in the background in the current
 // window, instead of in new windows.
