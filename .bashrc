@@ -138,3 +138,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export BC_ENV_ARGS=~/.bc
 
+alias javac="javac -J-Dfile.encoding=utf8"
+alias java="java -J-Dfile.encoding=utf8"
+
