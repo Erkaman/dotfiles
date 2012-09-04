@@ -1114,3 +1114,5 @@ If no associated application, then `find-file' FILE."
 
 (global-set-key "\C-xc" 'my-compile-func)
 
+;; set default ispell dictionary
+(setq ispell-dictionary "english")
