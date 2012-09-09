@@ -1116,3 +1116,8 @@ If no associated application, then `find-file' FILE."
 
 ;; set default ispell dictionary
 (setq ispell-dictionary "english")
+
+; don't use tabs for java-mode
+(add-hook 'java-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode)))
