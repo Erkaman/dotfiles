@@ -1121,3 +1121,5 @@ If no associated application, then `find-file' FILE."
 (add-hook 'java-mode-hook
           (lambda ()
             (setq indent-tabs-mode)))
+
+(require 'hwflisp-mode)
