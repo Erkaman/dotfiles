@@ -58,6 +58,9 @@ define_webjump("sport","https://student.portal.chalmers.se/sv/Sidor/default.aspx
 define_webjump("tda545","http://www.cse.chalmers.se/edu/course/tda545/");
 define_webjump("eda433","http://www.cse.chalmers.se/edu/year/2012/course/EDA433/");
 
+define_webjump("jgram","http://www.jgram.org/index.php");
+
+
 
 // load download buffers in the background in the current
 // window, instead of in new windows.
