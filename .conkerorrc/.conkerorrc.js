@@ -57,6 +57,7 @@ define_webjump("sport","https://student.portal.chalmers.se/sv/Sidor/default.aspx
 
 define_webjump("tda545","http://www.cse.chalmers.se/edu/course/tda545/");
 define_webjump("eda433","http://www.cse.chalmers.se/edu/year/2012/course/EDA433/");
+define_webjump("tmv200","http://www.math.chalmers.se/Math/Grundutb/CTH/tmv200/1213/");
 
 define_webjump("jgram","http://www.jgram.org/index.php");
 
