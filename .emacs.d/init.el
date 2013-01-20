@@ -691,7 +691,7 @@ If no associated application, then `find-file' FILE."
 (put 'downcase-region 'disabled nil)
 
 (global-set-key (kbd "C-c s") 'interrupt-process)
-(setq scheme-program-name "mzscheme.exe")
+(setq scheme-program-name "mzscheme")
 (require 'quack)
 
 (defun scheme-send-buffer ()
