@@ -58,6 +58,9 @@ define_webjump("sport","https://student.portal.chalmers.se/sv/Sidor/default.aspx
 define_webjump("tmv206","http://www.math.chalmers.se/Math/Grundutb/CTH/tmv206/1213/");
 define_webjump("dat215","http://www.cse.chalmers.se/research/group/idc/ituniv/courses/13/dkgg/index.html");
 
+define_webjump("weblio","http://ejje.weblio.jp/content/%s");
+
+
 // load download buffers in the background in the current
 // window, instead of in new windows.
 download_buffer_automatic_open_target = OPEN_NEW_BUFFER_BACKGROUND;
