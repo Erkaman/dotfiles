@@ -60,6 +60,8 @@ define_webjump("dat215","http://www.cse.chalmers.se/research/group/idc/ituniv/co
 
 define_webjump("weblio","http://ejje.weblio.jp/content/%s");
 
+define_webjump("tda367","http://www.cse.chalmers.se/edu/course/TDA367/");
+
 
 // load download buffers in the background in the current
 // window, instead of in new windows.
