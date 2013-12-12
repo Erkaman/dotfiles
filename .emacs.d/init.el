@@ -1131,3 +1131,6 @@ If no associated application, then `find-file' FILE."
 
 (require 'doc-mode)
 (add-to-list 'auto-mode-alist '("\\.doc$" . doc-mode))
+
+(add-hook 'shell-mode-hook (lambda () (set-buffer-process-coding-system 'mule-utf-8 'mule-utf-8)))
+
