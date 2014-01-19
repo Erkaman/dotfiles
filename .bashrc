@@ -64,7 +64,7 @@ shopt -s nocaseglob
 if [[ $platform == 'linux' ]]; then
 export PATH="~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:/opt/jruby/bin:$PATH"
 elif [[ $platform == 'mac' ]]; then
-export PATH="/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/universal-darwin:/usr/libexec:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/universal-darwin:/usr/libexec:/Applications/Mkvtoolnix.app/Contents/MacOS:/Users/erkastina/you-get-develop:$PATH"
 export MANPATH=/opt/local/share/man:$MANPATH
 fi
 
@@ -138,6 +138,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export BC_ENV_ARGS=~/.bc
 
-alias javac="javac -J-Dfile.encoding=utf8"
-alias java="java -J-Dfile.encoding=utf8"
-
+#alias javac="javac -J-Dfile.encoding=utf8"
+#alias java="java -J-Dfile.encoding=utf8"
