@@ -1134,3 +1134,10 @@ If no associated application, then `find-file' FILE."
 
 (add-hook 'shell-mode-hook (lambda () (set-buffer-process-coding-system 'mule-utf-8 'mule-utf-8)))
 
+(setq load-path (cons "/usr/local/lib/erlang/lib/tools-2.6.13/emacs"
+      load-path))
+      (setq erlang-root-dir "/usr/local/lib/erlang")
+      (setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
+      (require 'erlang-start)
+
+; /usr/local/lib/erlang/lib/tools-2.6.13/emacs
