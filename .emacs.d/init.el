@@ -37,8 +37,6 @@
 (setq scroll-step 1)
 
 ;; Redo.
-(require 'redo+)
-(global-set-key (kbd "C-x C-_") 'redo)
 
 
 ;; Color-theme.
