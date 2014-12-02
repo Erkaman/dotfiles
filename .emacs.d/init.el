@@ -221,58 +221,6 @@
 (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
 
 
-;; Org mode.
-(add-to-list 'load-path "~/.emacs.d/elisp/org-7.4/lisp")
-(add-to-list 'load-path "~/.emacs.d/elisp/org-7.4/contrib/lisp")
-
-(require 'org-install)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
-(setq org-completion-use-ido t)
-(autoload 'org-mode "org" "Org mode" t)
-
-(eval-after-load "org"
-  '(progn
-
-     (add-hook 'org-mode-hook
-               (let ((original-command (lookup-key org-mode-map [tab])))
-                 `(lambda ()
-                    (setq yas/fallback-behavior
-                          '(apply ,original-command))
-                    (local-set-key [tab] 'yas/expand))))
-     ))
-
-(defun my-org-export-latex-fix-inputenc ()
-  "Set the codingsystem in inputenc to what the buffer is."
-  (let* ((cs buffer-file-coding-system)
-         (opt (latexenc-coding-system-to-inputenc cs)))
-    (when opt
-      (goto-char (point-min))
-      (while (re-search-forward "\\\\usepackage\\[\\(.*?\\)\\] {inputenc}"
-                                nil t)
-        (goto-char (match-beginning 1))
-        (delete-region (match-beginning 1) (match-end 1))
-        (insert opt))
-      (save-buffer))))
-
-(eval-after-load "org-latex"
-  '(add-hook 'org-export-latex-after-save-hook
-             'my-org-export-latex-fix-inputenc))
-
-
-
-
-;; org-mode html export for easy blogging.
-(defun org-export-body-as-html ()
-  (interactive)
-  (org-export-as-html 3 nil nil "blog" t))
-
-(add-hook 'org-mode-hook
-          (lambda ()
-            (setq org-export-htmlize-output-type 'css)
-            (local-set-key (quote [?\C-x ?\C-y]) 'org-export-body-as-html)))
 
 ;; Make text mode the default major mode.
 (setq default-major-mode 'text-mode)
@@ -315,8 +263,6 @@
 (setq vc-handled-backends nil)
 
 
-;; Orgtbl in html-mode;
-(add-hook 'html-mode-hook 'turn-on-orgtbl)
 
 ;; Always output pdf-files for tex and latex.
 (setq TeX-PDF-mode t)
@@ -414,7 +360,6 @@
 
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (add-hook 'LaTeX-mode-hook 'turn-on-flyspell)
-(add-hook 'org-mode-hook 'turn-on-flyspell)
 (add-hook 'message-mode-hook 'turn-on-flyspell)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (add-hook 'css-mode-hook 'turn-on-flyspell)
@@ -624,12 +569,6 @@
   "Remove all matches of the regular expression."
   (interactive "sRegexp to remove all occurrences of: ")
   (replace-regexp re ""))
-
-(defun gtd ()
-  (interactive)
-  (if (is-linux)
-      (find-file "/home/Dropbox/org/tasks.org")
-    (find-file "~/Dropbox/org/tasks.org")))
 
 
 (global-set-key (kbd "C-c b") 'browse-url-at-point)
@@ -847,12 +786,6 @@ If no associated application, then `find-file' FILE."
 (add-to-list 'auto-mode-alist '("\\.\\(asm\\|s\\|inc\\)$"
                                 . nasm-mode))
 
-(load "~/.emacs.d/elisp/haskell-mode/haskell-site-file.el")
-
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-                                        ;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
