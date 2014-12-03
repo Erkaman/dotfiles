@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script to update all the git repositories.
+# script to backup dropbox. .
 
 set -x
 rm -rf ~/backdropbox/

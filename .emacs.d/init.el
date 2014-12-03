@@ -1085,5 +1085,9 @@ If no associated application, then `find-file' FILE."
 
 ; /usr/local/lib/erlang/lib/tools-2.6.13/emacs
 
+(getenv "PATH")
+ (setenv "PATH"
+(concat
+ "/usr/local/texlive/2014/bin/x86_64-darwin" ":"
 
-/usr/lib/erlang/lib/tools-2.6.13/emacs
+(getenv "PATH")))

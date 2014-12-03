@@ -64,7 +64,7 @@ shopt -s nocaseglob
 if [[ $platform == 'linux' ]]; then
 export PATH="~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/x86_64-linux:/opt/jruby/bin:$PATH"
 elif [[ $platform == 'mac' ]]; then
-export PATH="/opt/local/bin:/opt/local/sbin:~/bin:/usr/local/bin:/usr/local/texlive/2011/bin/universal-darwin:/usr/libexec:/Applications/Mkvtoolnix.app/Contents/MacOS:/Users/erkastina/you-get-develop:/usr/local/texlive/2014/bin/x86_64-darwin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:~/bin:/usr/libexec:/Applications/Mkvtoolnix.app/Contents/MacOS:/Users/erkastina/you-get-develop:/usr/local/texlive/2014/bin/x86_64-darwin:$PATH"
 export MANPATH=/opt/local/share/man:$MANPATH
 fi
 
