@@ -120,10 +120,6 @@
 (ido-mode 1)
 (setq ido-file-extensions-order '(".tex" ".org" ".pdf" ".el" ".bib"))
 
-;; Zen Coding
-(autoload 'zencoding-mode "zencoding-mode" "Zen" t)
-(add-hook 'sgml-mode-hook 'zencoding-mode) ;;;Auto-start on any markup modes
-
 ;; Line numbers mode
 (autoload 'linum-mode "linum" "toggle line numbers on/off" t)
 (global-set-key (kbd "C-<f5>") 'linum-mode)
@@ -477,7 +473,10 @@
 
 ;; Turn of annoying bell sounds.
 (setq visible-bell nil)
-(setq ring-bell-function nil)
+
+(setq ring-bell-function #'ignore)
+
+
 
 (defun strip-quations (str)
   (substring str 1 (-(length str)1)))
@@ -554,8 +553,6 @@
 (add-to-list 'auto-mode-alist '("\\.conkerorrc$" . js2-mode))
 
 
-(autoload 'writegood-mode "writegood-mode" "Colorize issues with the writing in the buffer." t)
-(global-set-key "\C-cg" 'writegood-mode)
 
 (global-auto-revert-mode t)
 
@@ -629,22 +626,7 @@ If no associated application, then `find-file' FILE."
 
 (global-set-key (kbd "C-c s") 'interrupt-process)
 (setq scheme-program-name "mzscheme")
-(require 'quack)
 
-(defun scheme-send-buffer ()
-  (interactive)
-  "Send the entire current buffer to the inferior Scheme process."
-  (scheme-send-region (point-min) (point-max)))
-
-
-(define-key scheme-mode-map "\C-c\C-b" 'scheme-send-buffer)
-
-(autoload 'j-mode "j-mode.el"  "Major mode for J." t)
-(autoload 'j-shell "j-mode.el" "Run J from emacs." t)
-(setq auto-mode-alist
-      (cons '("\\.ij[rstp]" . j-mode) auto-mode-alist))
-
-(setq j-path "C:/J/j602/bin/")
 
 (add-to-list 'load-path "~/.emacs.d/elisp/python-mode.el/")
 (require 'python-mode)
@@ -793,14 +775,6 @@ If no associated application, then `find-file' FILE."
 (set-keyboard-coding-system 'latin-1)
                                         ;(set-language-environment 'latin-1)
 
-                                        ; for prolog.
-(autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
-(autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
-(autoload 'mercury-mode "prolog" "Major mode for editing Mercury programs." t)
-(setq prolog-system 'swi)
-(setq auto-mode-alist (append '(("\\.pro$" . prolog-mode)
-                                ("\\.m$" . mercury-mode))
-                              auto-mode-alist))
 
 (when (is-osx)
   (setq mac-option-modifier 'none)
@@ -1060,8 +1034,6 @@ If no associated application, then `find-file' FILE."
 (add-to-list 'auto-mode-alist '("\\.vert\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.frag\\'" . glsl-mode))
 
-(require 'doc-mode)
-(add-to-list 'auto-mode-alist '("\\.doc$" . doc-mode))
 
 (add-hook 'shell-mode-hook (lambda () (set-buffer-process-coding-system 'mule-utf-8 'mule-utf-8)))
 
