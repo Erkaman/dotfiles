@@ -1033,7 +1033,7 @@ If no associated application, then `find-file' FILE."
 (autoload 'glsl-mode "glsl-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.vert\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.frag\\'" . glsl-mode))
-
+(add-to-list 'auto-mode-alist '("\\.glsl\\'" . glsl-mode))
 
 (add-hook 'shell-mode-hook (lambda () (set-buffer-process-coding-system 'mule-utf-8 'mule-utf-8)))
 
@@ -1063,3 +1063,5 @@ If no associated application, then `find-file' FILE."
  "/usr/local/texlive/2014/bin/x86_64-darwin" ":"
 
 (getenv "PATH")))
+
+(set-default 'semantic-case-fold t)
