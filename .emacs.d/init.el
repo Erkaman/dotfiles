@@ -24,7 +24,7 @@
 
 
                                         ; haven't yet bothered setting up a LaTeX environment on windows.
-(if (not (is-windows))
+(if (not (is-linux))
     (load "/usr/share/emacs/site-lisp/auctex.el" nil t t))
 
 ;; barely ever use it.
