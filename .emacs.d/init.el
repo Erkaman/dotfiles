@@ -788,19 +788,6 @@ If no associated application, then `find-file' FILE."
 (if (is-windows)
     (windmove-default-keybindings 'shift))
 
-;; hack that makes sure the proper PATH variable is set in the
-;; graphical version of Emacs on OS X.
-(defun set-exec-path-from-shell-PATH ()
-  (let ((path-from-shell (replace-regexp-in-string
-                          "[ \t\n]*$"
-                          ""
-                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
-    (setenv "PATH" path-from-shell)
-    (setq exec-path (split-string path-from-shell path-separator))))
-
-(if (is-osx)
-    (if window-system (set-exec-path-from-shell-PATH)))
-
 (add-to-list 'auto-mode-alist '("\\.m$" . objc-mode))
 (add-to-list 'auto-mode-alist '("\\.mm$" . objc-mode))
 
@@ -1037,31 +1024,23 @@ If no associated application, then `find-file' FILE."
 
 (add-hook 'shell-mode-hook (lambda () (set-buffer-process-coding-system 'mule-utf-8 'mule-utf-8)))
 
-  (cond ((is-linux)
-(setq load-path (cons "/usr/lib/erlang/lib/tools-2.6.13/emacs"
-      load-path))
-      (setq erlang-root-dir "/usr/lib/erlang")
-      (setq exec-path (cons "/usr/lib/erlang/bin:" exec-path))
-      (require 'erlang-start)
-	 )
-        ((is-osx)
-	 (setq load-path (cons "/usr/local/lib/erlang/lib/tools-2.6.13/emacs"
-      load-path))
-      (setq erlang-root-dir "/usr/local/lib/erlang")
-      (setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
-      (require 'erlang-start)
-	 )
-	))
-
 
 
 ; /usr/local/lib/erlang/lib/tools-2.6.13/emacs
 
-(getenv "PATH")
+(setq reftex-default-bibliography '("/Users/eric/docu/voxelspel/report/report.bib"))
+
+
+(require 'exec-path-from-shell)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize)
+
+
+  )
+
+
  (setenv "PATH"
 (concat
  "/usr/local/texlive/2014/bin/x86_64-darwin" ":"
 
 (getenv "PATH")))
-
-(set-default 'semantic-case-fold t)
